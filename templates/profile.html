@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container mt-5">
+    <h5 class='display-6 text-center'>This is profile page</h5>
+    <h5 class='display-7 text-center text-success'>Welcome back {{user}}</h5>
+    <a href="{% url "change_pass" %}" class='btn btn-outline-warning'>Change password</a>
+</div>
+
+{% endblock content %}
+

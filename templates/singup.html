@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class='display-6 text-center'>Sing-up page</h5>
+{% load crispy_forms_tags %}
+<form action="" method='POST' style='width:60%; margin: auto;' novalidate>
+    {% csrf_token %}
+    {% for message in messages %}
+        <p class='bg-warning p-3'>{{message}}</p>
+    {% endfor %}
+    {{form|crispy}}
+    <button type="submit" class='btn btn-success'>Sing-up</button>
+    <p>I already have an account <a href="{%url 'singup'%}">Login</a></p>
+
+</form>
+{% endblock content %}
+

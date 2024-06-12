@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h5 class='display-6 text-center'>Change password page</h5>
+{% load crispy_forms_tags %}
+<form action="" method='POST' style='width:60%; margin: auto;' novalidate>
+    {% csrf_token %}
+    {% for message in messages %}
+        <p class='bg-warning p-3'>{{message}}</p>
+    {% endfor %}
+
+    {% for input in form %}
+        {{input.label_tag}}
+        {{input}}
+        {{input.errors|striptags}}
+        <br><br>
+    {% endfor %}
+    <button type="submit" class='btn btn-success'>Changed</button>
+</form>
+{% endblock content %}
+
